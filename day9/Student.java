@@ -6,8 +6,11 @@ public class Student {
 	private int marks;
 	private char grade;
 	
-	public void displayDetails(int roll, String name, int marks) {
-		
+	public void displayDetails(Student s1) {
+	System.out.println("Roll: "+s1.getRoll());
+	System.out.println("Name: "+ s1.getName());
+	System.out.println("Marks: "+s1.getMarks());
+	System.out.println("Grade: "+s1.calculateGrade());
 	}
 	public int getRoll() {
 		return roll;
@@ -24,19 +27,46 @@ public class Student {
 	public int getMarks() {
 		return marks;
 	}
-	public void setMarks(int marks) {
+//	public void setMarks(int marks) {
+//		if(marks >= 500) {
+//			System.out.println("Grade is A");
+//		}
+//		else if(marks < 500 && marks > 400) {
+//			System.out.println("Grade is B");
+//		}
+//		else if (marks <400){
+//			System.out.println("Grade is C");
+//		}
+//	}
+	private char calculateGrade() {
 		if(marks >= 500) {
-			System.out.println("Grade is A");
+//			System.out.println("Grade is A");
+			return 'A';
 		}
-		else if(marks < 500 && >= 400) {
-			System.out.println("Grade is B");
+		else if(marks < 500 && marks > 400) {
+//			System.out.println("Grade is B");
+			return 'B';
 		}
-		else (marks <400){
-			System.out.println("Grade is C");
+		else if (marks <400){
+//			System.out.println("Grade is C");
+			return 'C';
+		}
+		else {
+			return 'F';
 		}
 	}
-	private char calculateGrade(char grade) {
-		
+	public Student(int roll, String name, int marks, char grade) {
+//		super();
+		this.roll = roll;
+		this.name = name;
+		this.marks = marks;
+		this.grade = grade;
 	}
+	@Override
+	public String toString() {
+		return "Student [roll=" + roll + ", name=" + name + ", marks=" + marks + ", grade=" + grade + "]";
+	}
+	
+	
 
 }
