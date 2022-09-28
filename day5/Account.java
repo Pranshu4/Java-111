@@ -36,7 +36,7 @@ public class Account {
 	public int getBalance() {
 		return balance;
 	}
-
+//JAVA
 	public void setBalance(int balance) {
 		if(balance<0) {
 			System.out.println("Amount Should Be Positive");
